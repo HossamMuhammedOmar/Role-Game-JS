@@ -2,7 +2,7 @@ const hero = {
   id: "hero",
   name: "Wizard",
   avatar: "wizard.png",
-  health: "60",
+  health: 60,
   score: 6,
 };
 
@@ -10,7 +10,7 @@ const monster = {
   id: "monster",
   name: "Orc",
   avatar: "orc.png",
-  health: "10",
+  health: 10,
   score: 4,
 };
 
@@ -23,7 +23,7 @@ function renderCharacter(data) {
     <div class="character-card">
     <h4 class="name">${name}</h4>
     <img class="avatar" src="images/${avatar}" />
-    <p class="health">health: <b> ${health} </b></p>
+    <div class="health">health: <b> ${health} </b></div>
     <div class="dice-container"><div class="dice">${score}</div></div>
     </div>
 `;

@@ -53,7 +53,7 @@ main {
 @media (min-width: 550px) {
   .character-card {
     border: 0.2rem solid #000721;
-    height: 26rem;
+    height: 28rem;
     width: 37vw;
   }
 }
@@ -142,7 +142,7 @@ main {
 
 @media (min-width: 550px) {
   .dice-container {
-    height: 30%;
+    height: 15%;
     border-bottom-left-radius: 3px;
     border-bottom-right-radius: 3px;
   }
@@ -163,9 +163,10 @@ main {
 @media (min-width: 550px) {
   .dice-container .dice,
   .dice-container .placeholder-dice {
-    height: 10vh;
+    height: 5vh;
     width: 10vh;
-    line-height: 10.5vh;
+    /* line-height: 10.5vh; */
+    text-align: center;
   }
 }
 
