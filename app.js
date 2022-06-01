@@ -1,5 +1,5 @@
 import characterData from "./data";
-import { getDiceRollArray } from "./utils";
+import Character from "./Character";
 
 function Character(data) {
   Object.assign(this, data);
