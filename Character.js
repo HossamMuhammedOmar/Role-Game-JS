@@ -25,6 +25,15 @@ function Character(data) {
                 </div>
             </div>`;
   };
+
+  this.getDicePlaceholderHtml = function () {
+    return new Array(this.diceCount)
+      .fill("")
+      .map(function () {
+        return `<div class="placeholder-dice"></div>`;
+      })
+      .join("");
+  };
 }
 
 export default Character;
