@@ -164,7 +164,7 @@ main {
   .dice-container .dice,
   .dice-container .placeholder-dice {
     height: 5vh;
-    width: 10vh;
+    width: 5vh;
     /* line-height: 10.5vh; */
     text-align: center;
   }

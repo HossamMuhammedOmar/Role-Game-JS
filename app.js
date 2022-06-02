@@ -14,7 +14,7 @@ function gameOver() {
       ? "The Orc is Victorious"
       : "Wizard Wins";
 
-  const endEmoji = wizard.dead && orc.dead ? "☠️" : wizard.dead ? "☠️" : "🔮";
+  const endEmoji = wizard.dead && orc.dead ? "☠️" : wizard.dead ? "👹" : "🔮";
 
   renderGameOver(endMessage, endEmoji);
 }
