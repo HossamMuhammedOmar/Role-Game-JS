@@ -10,6 +10,8 @@ function attack() {
   wizard.getDiceHtml();
   orc.getDiceHtml();
   render();
+  orc.takeDamage(wizard.currentDiceScore);
+  wizard.takeDamage(orc.currentDiceScore);
 }
 
 document.getElementById("attack-button").addEventListener("click", attack);

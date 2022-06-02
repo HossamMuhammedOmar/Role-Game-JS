@@ -16,8 +16,6 @@ function Character(data) {
 
   this.getCharacterHtml = function () {
     const { elementId, name, avatar, health, diceCount, diceArray } = this;
-    // let diceHtml = this.getDiceHtml(diceCount);
-
     return `
             <div class="character-card">
                 <h4 class="name"> ${name} </h4>
@@ -27,6 +25,10 @@ function Character(data) {
                     ${diceArray}
                 </div>
             </div>`;
+  };
+
+  this.takeDamage = function (attackScoreArray) {
+    console.log(attackScoreArray);
   };
 }
 
