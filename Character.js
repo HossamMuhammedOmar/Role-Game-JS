@@ -28,7 +28,17 @@ function Character(data) {
   };
 
   this.takeDamage = function (attackScoreArray) {
-    console.log(attackScoreArray);
+    const totalAttackScore = attackScoreArray.reduce(
+      (total, currentElement) => {
+        return total + currentElement;
+      }
+    );
+    this.health -= totalAttackScore;
+
+    if (this.health <= 0) {
+      this.health = 0;
+      this.dead = true;
+    }
   };
 }
 

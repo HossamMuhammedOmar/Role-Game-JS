@@ -6,12 +6,24 @@ function render() {
   document.getElementById("monster").innerHTML = orc.getCharacterHtml();
 }
 
+function gameOver() {
+  let endMessage =
+    wizard.dead && orc.dead
+      ? "No victors - all creatures are dead"
+      : wizard.dead
+      ? "The Orc is Victorious"
+      : "Wizard Wins";
+
+  console.log(endMessage);
+}
+
 function attack() {
   wizard.getDiceHtml();
   orc.getDiceHtml();
-  render();
   orc.takeDamage(wizard.currentDiceScore);
   wizard.takeDamage(orc.currentDiceScore);
+  render();
+  if (orc.dead || wizard.dead) gameOver();
 }
 
 document.getElementById("attack-button").addEventListener("click", attack);
