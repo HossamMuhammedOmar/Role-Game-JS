@@ -1,14 +1,19 @@
-import { getDiceRollArray, getDicePlaceholderHtml } from "/utils.js";
+import {
+  getDiceRollArray,
+  getDicePlaceholderHtml,
+  getPercentage,
+} from "/utils.js";
 
 function Character(data) {
   Object.assign(this, data);
 
   this.diceArray = getDicePlaceholderHtml(data.diceCount);
+  this.maxHealth = this.health;
 
   this.getDiceHtml = function (diceCount) {
     this.currentDiceScore = getDiceRollArray(this.diceCount);
     this.diceArray = this.currentDiceScore
-      .map(function (num) {
+      .map((num) => {
         return `<div class="dice">${num}</div>`;
       })
       .join("");
@@ -34,11 +39,12 @@ function Character(data) {
       }
     );
     this.health -= totalAttackScore;
-
     if (this.health <= 0) {
       this.health = 0;
       this.dead = true;
     }
+
+    console.log(getPercentage(this.health, this.maxHealth) + "%");
   };
 }
 

@@ -1,5 +1,5 @@
 function getDiceRollArray(diceCount) {
-  return new Array(diceCount).fill(0).map(function () {
+  return new Array(diceCount).fill(0).map(() => {
     return Math.floor(Math.random() * 6) + 1;
   });
 }
@@ -7,10 +7,14 @@ function getDiceRollArray(diceCount) {
 function getDicePlaceholderHtml(diceCount) {
   return new Array(diceCount)
     .fill(0)
-    .map(function () {
+    .map(() => {
       return `<div class="placeholder-dice"></div>`;
     })
     .join("");
 }
 
-export { getDiceRollArray, getDicePlaceholderHtml };
+function getPercentage(remainingHealth, maximumHealth) {
+  return (remainingHealth * 100) / maximumHealth;
+}
+
+export { getDiceRollArray, getDicePlaceholderHtml, getPercentage };
