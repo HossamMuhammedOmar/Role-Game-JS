@@ -14,7 +14,9 @@ function gameOver() {
       ? "The Orc is Victorious"
       : "Wizard Wins";
 
-  console.log(endMessage);
+  const endEmoji = wizard.dead && orc.dead ? "☠️" : wizard.dead ? "☠️" : "🔮";
+
+  renderGameOver(endMessage, endEmoji);
 }
 
 function attack() {
@@ -24,6 +26,14 @@ function attack() {
   wizard.takeDamage(orc.currentDiceScore);
   render();
   if (orc.dead || wizard.dead) gameOver();
+}
+
+function renderGameOver(endMessage, endEmoji) {
+  document.body.innerHTML = `<div class="end-game">
+  <h2>Game Over</h2>
+  <h3>${endMessage}</h3>
+  <p class="end-emoji">${endEmoji}</p>
+</div>`;
 }
 
 document.getElementById("attack-button").addEventListener("click", attack);
