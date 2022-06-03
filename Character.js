@@ -7,12 +7,12 @@ import {
 function Character(data) {
   Object.assign(this, data);
 
-  this.diceArray = getDicePlaceholderHtml(data.diceCount);
+  this.diceHtml = getDicePlaceholderHtml(data.diceCount);
   this.maxHealth = this.health;
 
-  this.getDiceHtml = function (diceCount) {
+  this.setDiceHtml = function () {
     this.currentDiceScore = getDiceRollArray(this.diceCount);
-    this.diceArray = this.currentDiceScore
+    this.diceHtml = this.currentDiceScore
       .map((num) => {
         return `<div class="dice">${num}</div>`;
       })
@@ -20,7 +20,7 @@ function Character(data) {
   };
 
   this.getCharacterHtml = function () {
-    const { elementId, name, avatar, health, diceCount, diceArray } = this;
+    const { elementId, name, avatar, health, diceCount, diceHtml } = this;
     const healthBar = this.getHealthBarHtml();
     return `
             <div class="character-card">
@@ -28,7 +28,7 @@ function Character(data) {
                 <img class="avatar" src="${avatar}" />
                 <div class="health">health: <b> ${health} </b></div>
                 <div class="dice-container">
-                    ${diceArray}
+                    ${diceHtml}
                 </div>
                 ${healthBar}
             </div>`;
