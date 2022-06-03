@@ -31,8 +31,10 @@ function attack() {
     gameOver();
   } else if (monster.dead) {
     if (monstersArray.length > 0) {
-      monster = getNewMonster();
-      render();
+      setTimeout(() => {
+        monster = getNewMonster();
+        render();
+      }, 1000);
     } else {
       gameOver();
     }
